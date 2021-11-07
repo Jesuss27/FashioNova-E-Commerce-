@@ -6,6 +6,9 @@ const navSlide = () => {
     hamburger.addEventListener("click", () => {
         nav.classList.toggle("nav-active");
         // animate nav links
+        navLinks.forEach((link,index) => {
+            link.style.animation =  `navFadeIn .5s ease forwards ${index / 7 + .3}s`
+        })
     });
 }
 

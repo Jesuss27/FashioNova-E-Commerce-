@@ -389,17 +389,20 @@ form{
     }
 
     .links{
-        background-color:#b6b5c7;
+        background-color:#fdcb6d;
         position:absolute;
         right:0;
         top:8vh;
         width:100%;
         height:100vh;
         flex-direction: column;
-        transform: translateX(100%);
         transition: transform 0.5s ease;
-        z-index:10;
-        
+        transform: translateX(100%);
+        z-index:10;   
+    }
+
+    .links li{
+        opacity:0;
     }
 
     .nav-active{
