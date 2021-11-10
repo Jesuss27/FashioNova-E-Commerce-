@@ -10,7 +10,7 @@ body{
 }
 h1{
     font-weight: 800;
-    font-size:6.5em;
+    font-size:5.5em;
     color:white;
     font-weight: bolder;
 }
@@ -49,10 +49,11 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
-.line{
+#line{
     width:30px;
     height: 3px;
     background:black;
+    transition:0.3s;
 }
 
 a{
@@ -121,11 +122,13 @@ li{list-style:none;}
 }
 
 
-.two-column-main p {
+
+.border-left{
     color:white;
     opacity: 0.8;
     padding:0 15px;;
     border-left:5px solid black;
+
 }
 
 
@@ -368,6 +371,12 @@ form{
 }
 
 @media (max-width:1024px){
+    h1{
+        font-size:4.5em;
+    }
+    h2{
+        font-size:3.9em;
+    }
     h3{
         font-size:3.0em
     }
@@ -381,11 +390,32 @@ form{
 }
 
 @media (max-width:768px){
+    h1{
+        font-size:4.2em;
+    }
+    h2{
+        font-size:3.0em;
+    }
+    h3{
+        font-size:2.6em
+    }
+    
     body{
         overflow-x: hidden;
     }
+    .search-box{
+        display:none;
+    }
     [class*="col-"]{
         width:100%;
+    }
+
+    .two-column-main .col-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height:92vh;
     }
 
     .links{
@@ -396,9 +426,9 @@ form{
         width:100%;
         height:100vh;
         flex-direction: column;
-        transition: transform 0.5s ease;
-        transform: translateX(100%);
-        z-index:10;   
+        left:100%;
+        z-index:10; 
+        transition:all 0.5s ease;  
     }
 
     .links li{
@@ -406,12 +436,27 @@ form{
     }
 
     .nav-active{
-        transform: translateX(0%);
+        left:0%;
     }
 
     .hamburger{
         display:inline-flex;
         cursor: pointer;
+    }
+
+    .hamburger.is-active #line:nth-child(1){
+        opacity: 1;
+        transform: translateY(.8em) rotate(45deg)
+    }
+
+    .hamburger.is-active #line:nth-child(2){
+        opacity:0;
+
+    }
+
+    .hamburger.is-active #line:nth-child(3){
+        opacity:1;
+        transform: translateY(-.8em) rotate(-45deg)
     }
  
     .section-3{
@@ -422,6 +467,46 @@ form{
         text-align: center;
         
     }
+}
+
+@media(max-width:426px){
+    h1{
+        font-size:3.8em;
+    }
+    h2{
+        font-size:3.0em;
+    }
+    h3{
+        font-size:2.6em
+    }
+    p{font-size:1.2em;}
+    .section-7 .col-2{
+        padding:1em;
+    }
+}
+@media(max-width:375px){
+    h1{
+        font-size:3.4em;
+    }
+    h2{
+        font-size:2.6em;
+    }
+    h3{
+        font-size:2.0em
+    }
+    p{font-size:1.0em;}
+}
+@media(max-width:321px){
+    h1{
+        font-size:3.0em;
+    }
+    h2{
+        font-size:2.2em;
+    }
+    h3{
+        font-size:1.8em
+    }
+    p{font-size:1.0em;}
 }
 
 @keyframes navFadeIn {
